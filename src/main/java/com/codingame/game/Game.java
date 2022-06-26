@@ -1,17 +1,28 @@
 package com.codingame.game;
 
-import com.codingame.game.action.*;
+import static java.lang.Math.abs;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+import java.util.Stack;
 import java.util.stream.Collectors;
 
-import com.codingame.game.card.*;
+import com.codingame.game.action.GiveAction;
+import com.codingame.game.action.MoveAction;
+import com.codingame.game.action.PlayAction;
+import com.codingame.game.action.ReleaseAction;
+import com.codingame.game.action.ThrowAction;
+import com.codingame.game.card.ActionCard;
+import com.codingame.game.card.BonusCard;
+import com.codingame.game.card.Card;
+import com.codingame.game.card.CardType;
+import com.codingame.game.card.TechnicalDebtCard;
 import com.codingame.gameengine.core.MultiplayerGameManager;
 import com.codingame.view.View;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
-import static java.lang.Math.abs;
 
 @Singleton
 public class Game {
@@ -66,6 +77,7 @@ public class Game {
         }
 
         lastTurn = false;
+        nextCardId = 0;
         random = new Random(seed);
         //create board & the action cards
         zones = new Zone[Config.ZONES_COUNT];

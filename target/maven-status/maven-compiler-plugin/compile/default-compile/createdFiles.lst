@@ -21,7 +21,6 @@ com\codingame\game\action\RandomActionFactory.class
 com\codingame\game\card\Card.class
 com\codingame\view\CardMove.class
 com\codingame\game\LeagueRules.class
-SkeletonMain.class
 com\codingame\game\Game$1.class
 com\codingame\view\PlayerView.class
 com\codingame\game\card\TechnicalDebtCard.class
