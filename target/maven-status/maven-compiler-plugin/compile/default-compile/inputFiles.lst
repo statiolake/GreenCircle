@@ -2,7 +2,6 @@ C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\GamePhase
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\Referee.java
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\view\CardMove.java
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\action\PlayAction.java
-C:\Users\dicen\dev\github\GreenCircle\src\main\java\SkeletonMain.java
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\view\tooltip\TooltipModule.java
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\Application.java
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\ApplicationFactory.java
@@ -31,4 +30,6 @@ C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\action\Ra
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\CommandManager.java
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\action\WaitAction.java
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\GameRuleException.java
+C:\Users\dicen\dev\github\GreenCircle\src\main\java\SimulationMain.java
 C:\Users\dicen\dev\github\GreenCircle\src\main\java\com\codingame\game\Game.java
+C:\Users\dicen\dev\github\GreenCircle\src\main\java\VisualizerMain.java

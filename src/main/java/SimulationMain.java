@@ -11,22 +11,44 @@ public class SimulationMain {
         System.out.format("p0: %s\n", args[0]);
         System.out.format("p1: %s\n", args[1]);
 
+        final int NUM_TRIAL = 30;
         int[][] win = { { 0, 0 }, { 0, 0 } };
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < NUM_TRIAL; i++) {
             for (int first = 0; first < 2; first++) {
                 GameResult res = simulate(args[first], args[1 - first]);
-                if (res.scores.get(0) > res.scores.get(1))
-                    win[first][0] += 1;
-                if (res.scores.get(1) > res.scores.get(0))
-                    win[1 - first][1] += 1;
 
-                if (first == 0) {
-                    System.out.format("[%3d] vs  %3d\n", win[0][0], win[1][1], first);
+                int winner = -1;
+                if (res.scores.get(0) > res.scores.get(1)) {
+                    winner = 0;
+                } else if (res.scores.get(1) > res.scores.get(0)) {
+                    winner = 1;
+                }
+
+                if (winner != -1) {
+                    win[winner][first] += 1;
+                }
+
+                System.out.format("%3d%c: ", i, first == 1 ? 'R' : ' ');
+                if (winner == 0) {
+                    System.out.format("[%3d] vs  %3d \n", win[0][first], win[1][first]);
+                } else if (winner == 1) {
+                    System.out.format(" %3d  vs [%3d]\n", win[0][first], win[1][first]);
                 } else {
-                    System.out.format(" %3d  vs [%3d]\n", win[0][1], win[1][0], first);
+                    System.out.format(" %3d  vs  %3d \n", win[0][first], win[1][first]);
                 }
             }
         }
+
+        System.out.println();
+        System.out.format("## RESULTS\n");
+        System.out.println();
+        System.out.format("p0 first: p0: %f%% vs p1: %f%%\n", (double) win[0][0] / NUM_TRIAL,
+                (double) win[1][0] / NUM_TRIAL);
+        System.out.format("p1 first: p0: %f%% vs p1: %f%%\n", (double) win[0][1] / NUM_TRIAL,
+                (double) win[1][1] / NUM_TRIAL);
+        System.out.format("   total: p0: %f%% vs p1: %f%%\n", (double) (win[0][0] + win[0][1]) / (NUM_TRIAL * 2),
+                (double) (win[1][0] + win[1][1]) / (NUM_TRIAL * 2));
+
     }
 
     private static GameResult simulate(String player1, String player2) {

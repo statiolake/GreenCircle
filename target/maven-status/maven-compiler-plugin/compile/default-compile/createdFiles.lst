@@ -1,6 +1,7 @@
 com\codingame\game\ApplicationFactory.class
 com\codingame\game\Application.class
 com\codingame\game\InvalidInputException.class
+SimulationMain.class
 com\codingame\game\action\WaitAction.class
 com\codingame\game\action\MoveAction.class
 com\codingame\game\Game.class
@@ -27,6 +28,7 @@ com\codingame\game\card\TechnicalDebtCard.class
 com\codingame\view\CardView.class
 com\codingame\game\action\GiveAction.class
 com\codingame\game\action\ReleaseAction.class
+VisualizerMain.class
 com\codingame\game\GameSummaryManager.class
 com\codingame\game\card\ActionCard.class
 com\codingame\game\Zone.class
