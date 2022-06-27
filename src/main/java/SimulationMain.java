@@ -11,7 +11,7 @@ public class SimulationMain {
         System.out.format("p0: %s\n", args[0]);
         System.out.format("p1: %s\n", args[1]);
 
-        final int NUM_TRIAL = 30;
+        final int NUM_TRIAL = 200;
         int[][] win = { { 0, 0 }, { 0, 0 } };
         for (int i = 0; i < NUM_TRIAL; i++) {
             for (int first = 0; first < 2; first++) {
@@ -19,9 +19,9 @@ public class SimulationMain {
 
                 int winner = -1;
                 if (res.scores.get(0) > res.scores.get(1)) {
-                    winner = 0;
+                    winner = first;
                 } else if (res.scores.get(1) > res.scores.get(0)) {
-                    winner = 1;
+                    winner = 1 - first;
                 }
 
                 if (winner != -1) {
@@ -48,7 +48,6 @@ public class SimulationMain {
                 (double) win[1][1] / NUM_TRIAL);
         System.out.format("   total: p0: %f%% vs p1: %f%%\n", (double) (win[0][0] + win[0][1]) / (NUM_TRIAL * 2),
                 (double) (win[1][0] + win[1][1]) / (NUM_TRIAL * 2));
-
     }
 
     private static GameResult simulate(String player1, String player2) {
